@@ -17,6 +17,11 @@ conda env create -f conda_env.yml
 conda activate conda_env
 python main.py
 ```
+in main.py, change the parameters for print(get_shortest_path(matrix,11, 8)) to change the AI's starting position
+
+
+
+
 ## Step 1 : learning
 The test requires the use and manipulation of reinforcement learning techniques, in particular Q-learning techniques, which I am not yet familiar with. So I started by watching a YouTube tutorials to get started.
 
