@@ -5,7 +5,18 @@ This readme file details the step I took to attempt to solve the jumbo mana tech
 I tried to mention all the steps I took in detail in order to demonstrate my thinking process and the way in which I apporach learning about new concepts, if you do not wish to read about the learning phase you can skip to step 2.
 
 ## Step 0 : setup
+Versions:
 
+* Python 3.11.3
+* Cuda 11.8
+
+To run this program, execute the following commands in a **miniconda** terminal:
+ 
+``` 
+conda env create -f conda_env.yml
+conda activate conda_env
+python main.py
+```
 ## Step 1 : learning
 The test requires the use and manipulation of reinforcement learning techniques, in particular Q-learning techniques, which I am not yet familiar with. So I started by watching a YouTube tutorials to get started.
 
@@ -114,3 +125,6 @@ By testing the model starting at the position (11,8), I got the following result
 ![Alt text](result2.png)
 
 ![Alt text](result_map2.png)
+
+## Limitations
+Although this solution works fairly well on the training environment, it would generalize very well on new unseen environments due to its reliance on the Q-table that is learned while training.
