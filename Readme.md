@@ -95,6 +95,8 @@ However, I still left this attempt in this repository if you wish to take a look
 
 For this step I am creating the custom matrix environment in which my agent will operate.
 
+For this I created the Matrix class.
+
 The environment for this problem is a 12x12 matrix with 4 main obstacles
 
 * Each state (square) is assigned a reward value : -100 for obstacles, -1 for normal squares, and 100 for the goal state 
@@ -132,4 +134,4 @@ By testing the model starting at the position (11,8), I got the following result
 ![Alt text](result_map2.png)
 
 ## Limitations
-Although this solution works fairly well on the training environment, it would generalize very well on new unseen environments due to its reliance on the Q-table that is learned while training.
+Although this solution works fairly well on the training environment, it would not generalize very well on new unseen environments due to its reliance on the Q-table that is learned while training.
