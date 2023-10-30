@@ -1,11 +1,15 @@
 from matrix import Matrix
 from utils import *
 
+import matplotlib.pyplot as plt
+
 matrix = Matrix()
 
 epsilon = 0.9 
 discount_factor = 0.9 
 learning_rate = 0.9 
+
+
 
 for episode in range(1000):
     row_index, column_index = get_starting_location(matrix)
@@ -28,3 +32,16 @@ for episode in range(1000):
 print("training complete!")
 
 print(get_shortest_path(matrix,11, 8))
+
+#Yellow = target
+#Green = player
+
+fig, ax = plt.subplots()
+ax.imshow(matrix.rewards, cmap='viridis', interpolation='nearest')
+
+# Add grid lines with 12x12 divisions
+ax.set_xticks(np.arange(-0.5, matrix.rewards.shape[1], 1), minor=True)
+ax.set_yticks(np.arange(-0.5, matrix.rewards.shape[0], 1), minor=True)
+ax.grid(which='minor', color='black', linewidth=1)
+
+plt.show()
