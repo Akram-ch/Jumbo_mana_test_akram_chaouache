@@ -17,20 +17,29 @@ conda env create -f conda_env.yml
 conda activate conda_env
 python main.py
 ```
+This project contains 3 files:
+* matrix.py: contains the definition for the matrix class which represents the environment.
+* utils.py: contains definitions for some helper functions.
+* main.py: contains the code to train and test the AI.
+  
+
 in main.py, change the parameters for print(get_shortest_path(matrix,11, 8)) to change the AI's starting position
+
+The program will print the path (positions) the AI has taken to the target
+
+The target is displayed in yellow and the player is displayed in green
 
 
 
 
 ## Step 1 : learning
-The test requires the use and manipulation of reinforcement learning techniques, in particular Q-learning techniques, which I am not yet familiar with. So I started by watching a YouTube tutorials to get started.
+The test requires the use and manipulation of reinforcement learning techniques, in particular Q-learning techniques, which I am not yet familiar with. So I started by watching a few  tutorials to get started.
 
 Here are some notes I have taken:
 
 **video links**: 
 * https://www.youtube.com/watch?v=wVXXLLT6srY
 * https://www.youtube.com/watch?v=__t2XRxXGxI
-* https://www.youtube.com/watch?v=iKdlKYG78j4
 
 ### What is reinforcement learning: 
 RL is a ML paradigm in which the goal is to train a machine to understand its environment so it can take actions that will maximize cumulative rewards. This is typically done through trial and error.
@@ -102,7 +111,7 @@ The environment for this problem is a 12x12 matrix with 4 main obstacles
 * Each state (square) is assigned a reward value : -100 for obstacles, -1 for normal squares, and 100 for the goal state 
 * Using negative rewards will encourage the AI to identify the shortest path to the goal by minimizing its punishments
 * moving into an obstacle is a terminal state, and will result in the end of the game. The square on which the player is located is also a terminal state.
-* The **Q-values** are store in a 3D numpy array, it contains the Q-values for each state and action pair.
+* The **Q-values** are stored in a 3D numpy array, it contains the Q-values for each state and action pair.
 
 * The AI agent may take 4 possible actions within the environment: up(0), right(1), down(2), left(3) 
 
@@ -119,6 +128,13 @@ Next, I defined some helper function to make things more organized.
 
 ## Step4 : training 
 The model was trained for 1000 episodes by letting the agent take actions and then updating the **Q-table** by calculating the temporal differences after each step. 
+
+hyperparameters: 
+```python
+  epsilon = 0.9 #The agent will choose the action with the highest Q-value 90% of the time, and take a random action 10% of the time to allow for some exploration.
+  discount_factor = 0.9  #Used in the calculation for temporal differences
+  learning_rate = 0.9  #The rate at which the Q-values are updated
+```
 
 Once the **Q-table** contains the optimal Q-values, the agent has "learned" to navigate through the environment.
 
