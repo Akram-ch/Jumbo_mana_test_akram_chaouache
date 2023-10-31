@@ -25,8 +25,9 @@ This project contains 3 files:
 
 in main.py, change the parameters for print(get_shortest_path(matrix,11, 8)) to change the AI's starting position
 
-The program will print the path (positions) the AI has taken to the target
+The program will print the path (positions) the AI has taken to the target.
 
+A visual representation of the map will be displayed in a seperate window.
 The target is displayed in yellow and the player is displayed in green
 
 
