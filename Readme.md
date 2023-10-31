@@ -30,7 +30,6 @@ Here are some notes I have taken:
 **video links**: 
 * https://www.youtube.com/watch?v=wVXXLLT6srY
 * https://www.youtube.com/watch?v=__t2XRxXGxI
-* https://www.youtube.com/watch?v=iKdlKYG78j4
 
 ### What is reinforcement learning: 
 RL is a ML paradigm in which the goal is to train a machine to understand its environment so it can take actions that will maximize cumulative rewards. This is typically done through trial and error.
